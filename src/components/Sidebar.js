@@ -7,13 +7,9 @@ import ExploreIcon from '@material-ui/icons/Explore';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
 import TextField from '@material-ui/core/TextField';
-import Avatar from '@material-ui/core/Avatar';
-import titleInitials from '../utils/title-initials';
+import ChatList from './ChatList';
 
 const styles = theme => ({
     drawerPaper: {
@@ -66,17 +62,7 @@ const Sidebar = ({classes,chats}) => (
 
 
 
-          
-  
-         
-         <List className={classes.chatsList}>
-            {chats.map((chat, index) => (
-              <ListItem key={index} button>
-                <Avatar>{titleInitials(chat.title)}</Avatar>
-                <ListItemText primary={chat.title}/>
-              </ListItem>
-            ))}
-          </List>
+         <ChatList chats={chats} />
          
        
      
